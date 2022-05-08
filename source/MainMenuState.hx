@@ -44,6 +44,8 @@ class MainMenuState extends MusicBeatState
 	var camFollowPos:FlxObject;
 	var debugKeys:Array<FlxKey>;
 
+	public static var firstStart:Bool = true;
+
 	public static var bgPaths:Array<String> = 
 	[
 		'backgrounds/SUSSUS AMOGUS',
@@ -110,8 +112,10 @@ class MainMenuState extends MusicBeatState
 			scale = 6 / optionShit.length;
 		}*/
 
+		var scale:Float = 1;
+
 		for (i in 0...optionShit.length)
-		{
+			{
 				var menuItem:FlxSprite = new FlxSprite(0, FlxG.height * 1.6);
 				menuItem.scale.x = scale;
 				menuItem.scale.y = scale;
@@ -133,7 +137,8 @@ class MainMenuState extends MusicBeatState
 				else
 					menuItem.y = 60 + (i * 160);
 			}
-		}
+
+		firstStart = false;
 
 		FlxG.camera.follow(camFollowPos, null, 1);
 
