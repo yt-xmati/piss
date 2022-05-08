@@ -81,6 +81,9 @@ class TitleState extends MusicBeatState
 	
 	public static var updateVersion:String = '';
 
+	var bobScreen:Bool = false;
+	var bobTween:FlxTween;
+
 	override public function create():Void
 	{
 		#if MODS_ALLOWED
@@ -589,13 +592,13 @@ class TitleState extends MusicBeatState
 				case 4:
 					deleteCoolText();
 				case 5:
-					createCoolText(['This is a mod to'], -60);
+					createCoolText(['sorry we dont partner'], -60);
 				case 7:
-					addMoreText('This game right below lol', -60);
-					logoSpr.visible = true;
+					addMoreText('with this ', -60);
+					ngSpr.visible = true;
 				case 8:
 					deleteCoolText();
-					logoSpr.visible = false;
+					ngSpr.visible = false;
 				case 9:
 					createCoolText([curWacky[0]]);
 				case 11:
@@ -630,7 +633,7 @@ class TitleState extends MusicBeatState
 	    
 		if (!skippedIntro)
 		{
-			remove(logoSpr);
+			remove(ngSpr);
 
 			FlxG.camera.flash(FlxColor.WHITE, 4);
 			remove(credGroup);
