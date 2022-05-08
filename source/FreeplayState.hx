@@ -33,6 +33,8 @@ class FreeplayState extends MusicBeatState
 	var curDifficulty:Int = -1;
 	private static var lastDifficultyName:String = '';
 
+	var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('backgrounds/SUSSUS AMOGUS'));
+
 	var scoreBG:FlxSprite;
 	var scoreText:FlxText;
 	var diffText:FlxText;
@@ -60,7 +62,7 @@ class FreeplayState extends MusicBeatState
 
 		#if desktop
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Menus", null);
+		DiscordClient.changePresence("In Freeplay", null);
 		#end
 
 		for (i in 0...WeekData.weeksList.length) {
@@ -97,7 +99,7 @@ class FreeplayState extends MusicBeatState
 			}
 		}*/
 
-		bg = new FlxSprite().loadGraphic(Paths.image(MainMenuState.randomizeBG());
+		bg.loadGraphic(MainMenuState.randomizeBG());
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 		bg.scale.x = bg.scale.y = scaleRatio;
