@@ -310,7 +310,7 @@ class MainMenuState extends MusicBeatState
 	}
 	public static function randomizeBG():flixel.system.FlxAssets.FlxGraphicAsset
 	{
-		var chance:Int = FlxG.random.int(0, bgPaths.length - 1);
+		var chance:Int = FlxG.random.int(0, bgPaths.length - 6);
 		return Paths.image(bgPaths[chance]);
 	}
 }
