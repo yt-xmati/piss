@@ -36,6 +36,7 @@ class MainMenuState extends MusicBeatState
 	var optionShit:Array<String> = [
 		'story_mode',
 		'freeplay',
+                'credits',
 		'options'
 	];
 
@@ -271,7 +272,7 @@ class MainMenuState extends MusicBeatState
 			else if (FlxG.keys.anyJustPressed(debugKeys))
 			{
 				selectedSomethin = true;
-				MusicBeatState.switchState(new MasterEditorMenu());
+				CoolUtil.browserLoad('https://cdn.discordapp.com/attachments/908164308452651039/972667757764153394/VID-20211107-WA0005.mp4'); //fuck you cheat!
 			}
 			#end
 		}
