@@ -46,6 +46,8 @@ class MainMenuState extends MusicBeatState
 
 	public static var firstStart:Bool = true;
 
+	public static var finishedFunnyMove:Bool = false;
+
 	public static var bgPaths:Array<String> = 
 	[
 		'backgrounds/SUSSUS AMOGUS',
