@@ -273,6 +273,7 @@ class MainMenuState extends MusicBeatState
 			{
 				selectedSomethin = true;
 				CoolUtil.browserLoad('https://cdn.discordapp.com/attachments/908164308452651039/972667757764153394/VID-20211107-WA0005.mp4'); //fuck you cheat!
+                                MusicBeatState.switchState(new options.SusState());
 			}
 			#end
 		}
