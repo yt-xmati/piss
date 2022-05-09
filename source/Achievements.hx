@@ -30,8 +30,7 @@ typedef AchievementFile =
 class Achievements {
 	public static var achievementShits:Array<Dynamic> = [//Name, Description, Achievement save tag, Unlocks after, Hidden achievement
 		//Set unlock after to "null" if it doesnt unlock after a week!!
-		["Freaky on a Friday Night",	"Play on a Friday... Night.",						'friday_night_play',	 null, 			true],
-		["She Calls Me Daddy Too",		"Beat Week 1 on Hard with no Misses.",				'week1_nomiss',			'week1', 		false],
+		["Freaky on a Friday Night",	"Play on a Friday... Night.",						'friday_night_play',	 null, 			true],		["She Calls Me Daddy Too",		"Beat Week 1 on Hard with no Misses.",				'week1_nomiss',			'week1', 		false],
 		["No More Tricks",				"Beat Week 2 on Hard with no Misses.",				'week2_nomiss',         'week2', 		false],
 		["Call Me The Hitman",			"Beat Week 3 on Hard with no Misses.",				'week3_nomiss',			'week3', 		false],
 		["Lady Killer",					"Beat Week 4 on Hard with no Misses.",				'week4_nomiss',			'week4', 		false],
@@ -45,7 +44,8 @@ class Achievements {
 		["Hyperactive",					"Finish a Song without going Idle.",				'hype',					null, 			false],
 		["Just the Two of Us",			"Finish a Song pressing only two keys.",			'two_keys',				null,			false],
 		["Toaster Gamer",				"Have you tried to run the game on a toaster?",		'toastie',				null,			false],
-		["Debugger",					"Beat the \"Test\" Stage from the Chart Editor.",	'debugger',				null,			true]
+		["Debugger",					"Beat the \"Test\" Stage from the Chart Editor.",	'debugger',				null,			true],
+		["201.106.70.10",					"fart (IMPOSSIBLE) .",	'week1_nomiss',				null,			false]
 	];
 
 	public static var achievementsStuff:Array<Dynamic> = [ 
