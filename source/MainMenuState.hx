@@ -36,7 +36,7 @@ class MainMenuState extends MusicBeatState
 	var optionShit:Array<String> = [
 		'story_mode',
 		'freeplay',
-                'awards',
+                'credits', // there was awards but awards crashed the game so credits lmao
 		'options'
 	];
 
