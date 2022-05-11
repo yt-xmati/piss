@@ -36,7 +36,7 @@ class MainMenuState extends MusicBeatState
 	var optionShit:Array<String> = [
 		'story_mode',
 		'freeplay',
-                'credits',
+                'awards',
 		'options'
 	];
 
@@ -227,19 +227,22 @@ class MainMenuState extends MusicBeatState
 					FlxG.sound.play(Paths.sound('confirmMenu'));
 
 					if(ClientPrefs.flashing) FlxFlicker.flicker(magenta, 1.1, 0.15, false);
-
 					menuItems.forEach(function(spr:FlxSprite)
 					{
 						if (curSelected != spr.ID)
 						{
-							FlxTween.tween(spr, {alpha: 0}, 0.4, {
+							// Main Menu Select Animations
+							FlxTween.tween(FlxG.camera, {zoom: 1.15}, 2, {ease: FlxEase.quartInOut});
+							FlxTween.tween(magenta, {x: -170}, 2.2, {ease: FlxEase.quartInOut});
+							FlxTween.tween(magenta, {y: -120}, 1.9, {ease: FlxEase.quartInOut});
+							// FlxTween.tween(bg, {alpha: 0}, 0.8, {ease: FlxEase.expoIn});
+							// FlxTween.tween(magenta, {alpha: 0}, 0.8, {ease: FlxEase.expoIn});
+							FlxTween.tween(spr, {x: -250, alpha: 0}, 0.4, {
 								ease: FlxEase.quadOut,
 								onComplete: function(twn:FlxTween)
 								{
 									spr.kill();
 								}
-							});
-						}
 						else
 						{
 							FlxFlicker.flicker(spr, 1, 0.06, false, false, function(flick:FlxFlicker)
