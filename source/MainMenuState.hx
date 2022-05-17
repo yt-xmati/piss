@@ -36,7 +36,7 @@ class MainMenuState extends MusicBeatState
 	var optionShit:Array<String> = [
 		'story_mode',
 		'freeplay',
-                'credits', // there was awards but awards crashed the game so credits lmao
+                'credits', // ho
 		'options'
 	];
 
@@ -64,7 +64,7 @@ class MainMenuState extends MusicBeatState
 	{
 		#if desktop
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("Menu Selector", null);
+		DiscordClient.changePresence("Selecting a Menu", null);
 		#end
 		debugKeys = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
 
@@ -81,7 +81,7 @@ class MainMenuState extends MusicBeatState
 
 		persistentUpdate = persistentDraw = true;
 
-		var yScroll:Float = Math.max(0.25 - (0.05 * (optionShit.length - 4)), 0.1);
+		var yScroll:Float = Math.max(0.1 - (0.03 * (optionShit.length - 4)), 0.1);
 		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(randomizeBG());
 		bg.scrollFactor.set(0, yScroll);
 		bg.setGraphicSize(Std.int(bg.width * 1.175*scaleRatio ));
@@ -95,7 +95,7 @@ class MainMenuState extends MusicBeatState
 		add(camFollow);
 		add(camFollowPos);
 
-		magenta = new FlxSprite(-80).loadGraphic(Paths.image('menuDesat'));
+		magenta = new FlxSprite(-80).loadGraphic(bg.graphic);
 		magenta.scrollFactor.set(0, yScroll);
 		magenta.setGraphicSize(Std.int(magenta.width * 1.175*scaleRatio ));
 		magenta.updateHitbox();
