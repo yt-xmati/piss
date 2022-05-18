@@ -2387,7 +2387,7 @@ class PlayState extends MusicBeatState
 				paused = true;
 				cancelMusicFadeTween();
 				CustomFadeTransition.nextCamera = camOther;
-				MusicBeatState.switchState(new SusState());
+				MusicBeatState.switchState(new AmogusVaginaSexState());
 	
 				#if desktop
 		    	DiscordClient.changePresence("CHEATER FUCK YOU", null, null, true);
