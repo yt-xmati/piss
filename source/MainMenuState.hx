@@ -145,11 +145,15 @@ class MainMenuState extends MusicBeatState
 
 		FlxG.camera.follow(camFollowPos, null, 1);
 
-		var versionShit:FlxText = new FlxText(12, ClientPrefs.getResolution()[1] - 24, 0, "Psych Engine v" + psychEngineVersion, 12);
+		var versionShit:FlxText = new FlxText(12, ClientPrefs.getResolution()[1] - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("Comic Sans MS Bold", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
-		var versionShit:FlxText = new FlxText(12, ClientPrefs.getResolution()[1] - 44, 0, "Bambi's Fantrack Hell v" + pissVersion, 12);
+		var versionShit:FlxText = new FlxText(12, ClientPrefs.getResolution()[1] - 64, 0, "Bambi's Fantrack Hell v" + pissVersion, 12);
+		versionShit.scrollFactor.set();
+		versionShit.setFormat("Comic Sans MS Bold", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(versionShit);
+		var versionShit:FlxText = new FlxText(12, ClientPrefs.getResolution()[1] - 24, 0, "Friday Night Funkin' v" + Application.current.meta.get('version'), 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("Comic Sans MS Bold", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
@@ -271,7 +275,8 @@ class MainMenuState extends MusicBeatState
 			{
 				selectedSomethin = true;
 //				CoolUtil.browserLoad('https://cdn.discordapp.com/attachments/908164308452651039/972667757764153394/VID-20211107-WA0005.mp4'); //fuck you cheat!
-                                MusicBeatState.switchState(new SusState());
+//                                MusicBeatState.switchState(new SusState());
+				MusicBeatState.switchState(new MasterEditorMenu()); //Comic Sans MS Bold 
 			}
 			#end
 		}
