@@ -116,7 +116,6 @@ class FreeplayState extends MusicBeatState
 						}
 					}
 					
-		WeekData.setDirectoryFromWeek();
 
 		/*		//KIND OF BROKEN NOW AND ALSO PRETTY USELESS//
 
