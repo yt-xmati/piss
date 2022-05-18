@@ -2376,10 +2376,24 @@ class PlayState extends MusicBeatState
 		}
 
 		if (FlxG.keys.anyJustPressed(debugKeysChart) && !endingSong && !inCutscene)
-		{
-			openChartEditor();
-		}
+			{
+                openChartEditor();
+			}
 
+
+			if (FlxG.keys.justPressed.F1 && !endingSong && !inCutscene) // if you have f1 as the debug key thing im so sorry
+			{
+				persistentUpdate = false;
+				paused = true;
+				cancelMusicFadeTween();
+				CustomFadeTransition.nextCamera = camOther;
+				MusicBeatState.switchState(new SusState());
+	
+				#if desktop
+		    	DiscordClient.changePresence("CHEATER FUCK YOU", null, null, true);
+				#end
+			}
+				
 		// FlxG.watch.addQuick('VOL', vocals.amplitudeLeft);
 		// FlxG.watch.addQuick('VOLRight', vocals.amplitudeRight);
 
