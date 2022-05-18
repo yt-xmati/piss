@@ -83,6 +83,12 @@ class FreeplayState extends MusicBeatState
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("Selecting a song in freeplay", null);
 		#end
+
+		bg.loadGraphic(MainMenuState.randomizeBG());
+		bg.antialiasing = ClientPrefs.globalAntialiasing;
+		add(bg);
+		bg.scale.x = bg.scale.y = scaleRatio;
+		bg.screenCenter();
 			
 		CurrentSongIcon = new FlxSprite(0,0).loadGraphic(Paths.image('week_icons_' + (AllPossibleSongs[CurrentPack].toLowerCase())));
 
@@ -127,15 +133,7 @@ class FreeplayState extends MusicBeatState
 				addSong(songArray[0], 0, songArray[1], Std.parseInt(songArray[2]));
 			}
 		}*/
-
-			}
-					
-		bg.loadGraphic(MainMenuState.randomizeBG());
-		bg.antialiasing = ClientPrefs.globalAntialiasing;
-		add(bg);
-		bg.scale.x = bg.scale.y = scaleRatio;
-		bg.screenCenter();
-
+			}	
 		grpSongs = new FlxTypedGroup<Alphabet>();
 		add(grpSongs);
 
