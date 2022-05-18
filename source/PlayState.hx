@@ -1056,6 +1056,7 @@ class PlayState extends MusicBeatState
 		scoreTxt.cameras = [camHUD];
 		botplayTxt.cameras = [camHUD];
 		timeTxt.cameras = [camHUD];
+		timeBar.cameras = [camHUD];
 		swagWatermark.cameras = [camHUD];
 		doof.cameras = [camHUD];
 
