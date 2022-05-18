@@ -142,7 +142,6 @@ class FreeplayState extends MusicBeatState
 		{
 			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i].songName, true, false);
 			songText.isMenuItem = false;
-			songText.itemType = "D-Shape";
 			songText.targetY = i;
 			grpSongs.add(songText);
 
@@ -226,8 +225,8 @@ class FreeplayState extends MusicBeatState
 	{
 		songs.push(new SongMetadata(songName, weekNum, songCharacter, color));
 	}
-
-	/*public function addWeek(songs:Array<String>, weekNum:Int, weekColor:Int, ?songCharacters:Array<String>)
+	
+	public function addWeek(songs:Array<String>, weekNum:Int, ?songCharacters:Array<String>)
 	{
 		if (songCharacters == null)
 			songCharacters = ['bf'];
@@ -236,12 +235,12 @@ class FreeplayState extends MusicBeatState
 		for (song in songs)
 		{
 			addSong(song, weekNum, songCharacters[num]);
-			this.songs[this.songs.length-1].color = weekColor;
 
 			if (songCharacters.length != 1)
 				num++;
 		}
-	}*/
+	}
+
 
 	var instPlaying:Int = -1;
 	private static var vocals:FlxSound = null;
