@@ -29,9 +29,8 @@ class FreeplayState extends MusicBeatState
 	var songs:Array<SongMetadata> = [];
 
 	var selector:FlxText;
-	private static var curSelected:Int = 0;
-	var curDifficulty:Int = -1;
-	private static var lastDifficultyName:String = '';
+	var curSelected:Int = 0;
+	var curDifficulty:Int = 1;
 
 	var scoreBG:FlxSprite;
 	var scoreText:FlxText;
@@ -43,12 +42,34 @@ class FreeplayState extends MusicBeatState
 
 	private var grpSongs:FlxTypedGroup<Alphabet>;
 	private var curPlaying:Bool = false;
+	private var curChar:String = "unknown";
 
 	private var iconArray:Array<HealthIcon> = [];
+	private var CurrentSongIcon:FlxSprite;
+
+	private var AllPossibleSongs:Array<String> = ["main", "extra", "covers"];
+	
+		private var CurrentPack:Int = 0;
+
 
 	var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('backgrounds/SUSSUS AMOGUS'));
 	var intendedColor:Int;
 	var colorTween:FlxTween;
+	var songColors:Array<FlxColor> = [
+		0xFF000000, // DUMBASS PLACEHOLDER
+		0xFF4965FF, // DAVE
+		0xFFDC97AA, // ANGEY ANGER
+		0xFF00B515, // MISTER BAMBI
+		0xFF4965FF, // fdfdfd
+		0xFFA40B09, // EVIL UNFAIRNESSSSS
+		0xFFFF0030, // 3d dave og color scary (sharted)
+		0xFF4965FF, // fdfdfd
+		0xFF4965FF, // fdfdfd
+		0xFF4965FF, // fdfdfd
+		0xFF4965FF, // fdfdfd
+		0xFF4965FF, // fdfdfd
+		0xFF00FFFF, // SPLIT THE THONNNNN 12
+    ];
 
 	override function create()
 	{
@@ -60,8 +81,40 @@ class FreeplayState extends MusicBeatState
 
 		#if desktop
 		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In Freeplay", null);
+		DiscordClient.changePresence("Selecting a song in freeplay", null);
 		#end
+			
+		CurrentSongIcon = new FlxSprite(0,0).loadGraphic(Paths.image('week_icons_' + (AllPossibleSongs[CurrentPack].toLowerCase())));
+
+		CurrentSongIcon.centerOffsets(false);
+		CurrentSongIcon.x = (FlxG.width / 2) - 256;
+		CurrentSongIcon.y = (FlxG.height / 2) - -605; // haxe is weird
+		CurrentSongIcon.antialiasing = true;
+
+		add(CurrentSongIcon);
+
+		super.create();
+	}
+	public function LoadProperPack()
+		{
+			switch (AllPossibleSongs[CurrentPack].toLowerCase())
+			{
+				case 'main':
+					addWeek(['Blocked','Corn-Theft','Maze',], 3, ['bambi']);
+					addWeek(['Mealie'], 3, ['bambi']);
+					addWeek(['Opposition'], 3, ['oppoExpunged']);
+					addWeek(['Thearchy'], 3, ['oppoExpunged']);
+					addWeek(['Tsukareta'], 3, ['oppoExpunged']);
+					addWeek(['Frickingdiephobia'], 3, ['oppoExpunged']);
+					addWeek(['Taimuresu'], 3, ['oppoExpunged']);
+				case 'extras':
+                    addWeek(['Supernovae', 'Glitch', 'Vs-Dave-Thanksgiving', 'vs-dave-christmas'], 3, ['bambiJoke']);		
+					addWeek(['Cheating'], 3, ['cheatingBambi']);
+					addWeek(['Unfairness'], 3, ['unfairnessBambi']);
+				case 'covers':
+					addWeek(['Bambsity'], 3, ['bambi']);
+						}
+					}
 
 		for (i in 0...WeekData.weeksList.length) {
 			var leWeek:WeekData = WeekData.weeksLoaded.get(WeekData.weeksList[i]);
