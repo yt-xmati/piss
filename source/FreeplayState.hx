@@ -128,6 +128,8 @@ class FreeplayState extends MusicBeatState
 			}
 		}*/
 
+			}
+					
 		bg.loadGraphic(MainMenuState.randomizeBG());
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
