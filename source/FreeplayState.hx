@@ -112,7 +112,7 @@ class FreeplayState extends MusicBeatState
 					addWeek(['Thearchy'], 3, ['oppoExpunged']);
 					addWeek(['Tsukareta'], 3, ['oppoExpunged']);
 					addWeek(['Frickingdiephobia'], 3, ['oppoExpunged']);
-					(['Taimuresu'], 3, ['oppoExpunged']);
+					addWeek(['Taimuresu'], 3, ['oppoExpunged']);
 				case 'extras':
                     addWeek(['Supernovae', 'Glitch', 'Vs-Dave-Thanksgiving', 'vs-dave-christmas'], 1, ['bambiJoke']);		
 					addWeek(['Cheating'], 1, ['cheatingBambi']);
