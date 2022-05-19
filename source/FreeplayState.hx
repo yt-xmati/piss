@@ -450,7 +450,7 @@ class FreeplayState extends MusicBeatState
 		
 		Paths.currentModDirectory = songs[curSelected].folder;
 		PlayState.storyWeek = songs[curSelected].week;
-
+	}
 	private function positionHighscore() {
 		scoreText.x = FlxG.width - scoreText.width - 6;
 
