@@ -55,21 +55,6 @@ class FreeplayState extends MusicBeatState
 	var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('backgrounds/SUSSUS AMOGUS'));
 	var intendedColor:Int;
 	var colorTween:FlxTween;
-	var songColors:Array<FlxColor> = [
-		0xFF000000, // DUMBASS PLACEHOLDER
-		0xFF4965FF, // DAVE
-		0xFFDC97AA, // ANGEY ANGER
-		0xFF00B515, // MISTER BAMBI
-		0xFF4965FF, // fdfdfd
-		0xFFA40B09, // EVIL UNFAIRNESSSSS
-		0xFFFF0030, // 3d dave og color scary (sharted)
-		0xFF4965FF, // fdfdfd
-		0xFF4965FF, // fdfdfd
-		0xFF4965FF, // fdfdfd
-		0xFF4965FF, // fdfdfd
-		0xFF4965FF, // fdfdfd
-		0xFF00FFFF, // SPLIT THE THONNNNN 12
-    ];
 
 	override function create()
 	{
