@@ -112,7 +112,7 @@ class FreeplayState extends MusicBeatState
 					addWeek(['Thearchy'], 3, ['oppoExpunged']);
 					addWeek(['Tsukareta'], 3, ['oppoExpunged']);
 					addWeek(['Frickingdiephobia'], 3, ['oppoExpunged']);
-					addWeek(['Taimuresu'], 3, ['oppoExpunged']);
+					(['Taimuresu'], 3, ['oppoExpunged']);
 				case 'extras':
                     addWeek(['Supernovae', 'Glitch', 'Vs-Dave-Thanksgiving', 'vs-dave-christmas'], 1, ['bambiJoke']);		
 					addWeek(['Cheating'], 1, ['cheatingBambi']);
@@ -216,7 +216,7 @@ class FreeplayState extends MusicBeatState
 		songs.push(new SongMetadata(songName, weekNum, songCharacter, color));
 	}
 	
-        public function addWeek(songs:Array<String>, weekNum:Int, weekColor:Int, ?songCharacters:Array<String>)
+        	public function addWeek(songs:Array<String>, weekNum:Int, ?songCharacters:Array<String>)
 	{
 		if (songCharacters == null)
 			songCharacters = ['bf'];
@@ -225,7 +225,6 @@ class FreeplayState extends MusicBeatState
 		for (song in songs)
 		{
 			addSong(song, weekNum, songCharacters[num]);
-			this.songs[this.songs.length-1].color = weekColor;
 
 			if (songCharacters.length != 1)
 				num++;
